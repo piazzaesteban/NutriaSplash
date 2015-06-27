@@ -27,7 +27,7 @@
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     lastTouch = [touch locationInNode:self.parent];
-    //self.position = lastTouch;
+    
     
 }
 
