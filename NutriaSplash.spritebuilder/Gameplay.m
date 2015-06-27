@@ -7,9 +7,12 @@
 //
 
 #import "Gameplay.h"
+#import "Pool.h"
 
 
-@implementation Gameplay
+@implementation Gameplay{
+    CCPhysicsNode *_physicsNode;
+}
 
 -(id)init{
     if (self = [super init]) {
@@ -18,12 +21,20 @@
 }
 
 -(void)didLoadFromCCB{
+    Pool* pool = (Pool*)[CCBReader load:@"Pool"];
+    pool.position = ccp(100,100);
+    pool.zOrder = 10;
+    [_physicsNode addChild:pool];
+    self.userInteractionEnabled = false;
     
 }
 
 -(void)onEnter{
     [super onEnter];
 }
+
+
+
 
 
 
