@@ -11,6 +11,11 @@
 
 @implementation Gameplay
 
+-(id)init{
+    if (self = [super init]) {
+    }
+    return self;
+}
 
 -(void)didLoadFromCCB{
     
