@@ -19,6 +19,7 @@
 }
 
 -(void)didLoadFromCCB{
+    self.jumping = NO;
     
 }
 

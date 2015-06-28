@@ -15,6 +15,7 @@
 		5B983AC61B3F132A00A3E946 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B983AC51B3F132A00A3E946 /* Gameplay.m */; };
 		5B983ADE1B3F4AC500A3E946 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B983ADD1B3F4AC400A3E946 /* Pool.m */; };
 		5B983AEF1B3F68FA00A3E946 /* Nutria.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B983AEE1B3F68FA00A3E946 /* Nutria.m */; };
+		5BCA32ED1B4015EE0011760A /* GridNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA32EC1B4015EE0011760A /* GridNode.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		7A40360419DDEE84007B6E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A40360319DDEE84007B6E8F /* main.m */; };
 		7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -172,6 +173,8 @@
 		5B983AED1B3F68FA00A3E946 /* Nutria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nutria.h; sourceTree = "<group>"; };
 		5B983AEE1B3F68FA00A3E946 /* Nutria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nutria.m; sourceTree = "<group>"; };
 		5BA4619E1974C88900785744 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = Platforms/Android/AndroidManifest.xml; sourceTree = "<group>"; };
+		5BCA32EB1B4015EE0011760A /* GridNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridNode.h; sourceTree = "<group>"; };
+		5BCA32EC1B4015EE0011760A /* GridNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridNode.m; sourceTree = "<group>"; };
 		7A4035FF19DDEE84007B6E8F /* NutriaSplash Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NutriaSplash Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A40360219DDEE84007B6E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Mac/Info.plist; sourceTree = "<group>"; };
 		7A40360319DDEE84007B6E8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/Platforms/Mac/main.m; sourceTree = "<group>"; };
@@ -457,6 +460,8 @@
 				5B983AEE1B3F68FA00A3E946 /* Nutria.m */,
 				5B983AC41B3F132A00A3E946 /* Gameplay.h */,
 				5B983AC51B3F132A00A3E946 /* Gameplay.m */,
+				5BCA32EB1B4015EE0011760A /* GridNode.h */,
+				5BCA32EC1B4015EE0011760A /* GridNode.m */,
 				5B983ADC1B3F4AC400A3E946 /* Pool.h */,
 				5B983ADD1B3F4AC400A3E946 /* Pool.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -844,6 +849,7 @@
 				5B983AC61B3F132A00A3E946 /* Gameplay.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B983AEF1B3F68FA00A3E946 /* Nutria.m in Sources */,
+				5BCA32ED1B4015EE0011760A /* GridNode.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
