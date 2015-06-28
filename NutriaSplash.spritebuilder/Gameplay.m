@@ -10,19 +10,22 @@
 #import "Pool.h"
 
 static const int GRID_ROWS = 6;
-static const int GRID_COLUMNS = 10;
+static const int GRID_COLUMNS = 9;
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
     NSMutableArray * pools;
+    NSMutableArray * lockNodes;
     CGFloat _cellWidth;
     CGFloat _cellHeight;
     CCSprite* _bg;
+    
 }
 
 -(id)init{
     if (self = [super init]) {
         pools = [[NSMutableArray alloc]init];
+        lockNodes = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -40,9 +43,10 @@ static const int GRID_COLUMNS = 10;
     }
     for (int k = 0; k< GRID_ROWS; k++){
         for (int j = 0; j<GRID_COLUMNS; j++){
-            CCSprite* target = [CCSprite spriteWithImageNamed:@"Blobs/target.png"];
-            target.position = ccp(k*_cellHeight,j*_cellWidth);
-            [_physicsNode addChild:target];
+            CCNode *node = [[CCNode alloc] init];
+            node.position = ccp(j*_cellWidth + _cellWidth/2 ,k*_cellHeight);
+            [lockNodes addObject: node];
+            
         }
     }
 }
@@ -55,6 +59,20 @@ static const int GRID_COLUMNS = 10;
     for(int i = 0; i< 5; i++){
         Pool* aux = [pools objectAtIndex:i];
         aux.physicsBody.velocity = ccpMult(aux.physicsBody.velocity, 0.97);
+        if (aux.physicsBody.velocity.x < 5 && aux.physicsBody.velocity.y < 5 && aux.physicsBody.velocity.y >0){
+            CCNode *best;
+            float distance = 10000.f;
+            for (int k =0; k< GRID_ROWS*GRID_COLUMNS; k++){
+                CCNode *node = [lockNodes objectAtIndex:k];
+                float d =sqrt(pow(node.position.x-aux.position.x,2)+pow(node.position.y-aux.position.y,2));
+                if(d<distance){
+                    best = node;
+                    distance = d;
+                }
+                
+            }
+            aux.position = best.position;
+        }
     }
 
 }

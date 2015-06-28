@@ -35,7 +35,11 @@
 {
     CGPoint vector = ccpSub(lastTouch, firstTouch);
     CGFloat dist = ccpDistance(lastTouch, firstTouch);
-    [self.physicsBody applyImpulse:ccpMult(vector, dist/2)];
+    CGPoint vel = ccpMult(vector, dist/2);
+    if ((vel.x >100 || vel.y > 100) || (vel.x <-100 || vel.y < -100)){
+        vel = ccpMult(vel, 0.5);
+    }
+    [self.physicsBody applyImpulse:vel];
     
 }
 

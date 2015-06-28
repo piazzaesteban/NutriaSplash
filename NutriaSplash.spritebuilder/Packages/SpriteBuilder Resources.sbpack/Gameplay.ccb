@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>agrass</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_bg</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -71,8 +71,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.50010210275650024</real>
+							<real>0.49638104438781738</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -96,8 +96,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.98802781105041504</real>
+							<real>0.85950970649719238</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -284,7 +284,7 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>4.9294581413269043</real>
+									<real>5.4840264320373535</real>
 									<real>3</real>
 									<false/>
 									<integer>0</integer>
@@ -465,7 +465,7 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>4.9294581413269043</real>
+									<real>5.5638957023620605</real>
 									<real>-4.9289999008178711</real>
 									<false/>
 									<integer>0</integer>
@@ -622,7 +622,7 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>-40.043376922607422</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -646,8 +646,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>-2</real>
-									<real>2.8712167739868164</real>
+									<real>-2.0011813640594482</real>
+									<real>3.4019696712493896</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -696,6 +696,8 @@
 								<array/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -827,8 +829,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>3</real>
-									<real>2.8712167739868164</real>
+									<real>3.1524524688720703</real>
+									<real>3.0985984802246094</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -943,7 +945,7 @@
 						<key>value</key>
 						<array>
 							<real>1</real>
-							<real>1</real>
+							<real>1.0120295286178589</real>
 							<false/>
 							<integer>0</integer>
 						</array>
