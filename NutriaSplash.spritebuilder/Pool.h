@@ -6,11 +6,14 @@
 //  Copyright 2015 Apportable. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Nutria.h"
 
-@interface Pool : CCNode {
-    
-}
+
+@interface Pool : CCNode
+
+@property (nonatomic,weak) Nutria* lola;
 
 @end

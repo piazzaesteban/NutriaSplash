@@ -7,6 +7,7 @@
 //
 
 #import "Pool.h"
+#import "Nutria.h"
 
 
 @implementation Pool{
@@ -43,5 +44,8 @@
     
 }
 
+-(void)setNutria:(Nutria*)nutria{
+    _lola = nutria;
+}
 
 @end

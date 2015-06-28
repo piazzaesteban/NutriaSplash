@@ -11,4 +11,15 @@
 
 @implementation Nutria
 
+
+-(id)init{
+    if([super init]){
+    }
+    return self;
+}
+
+-(void)didLoadFromCCB{
+    
+}
+
 @end
