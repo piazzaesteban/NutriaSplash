@@ -28,6 +28,7 @@ static const int POOL_NUM = 10;
     if (self = [super init]) {
         pools = [[NSMutableArray alloc]init];
         lockNodes = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
@@ -66,6 +67,7 @@ static const int POOL_NUM = 10;
     for(int i=0;i<POOL_NUM/2;i++){
         
     }
+    //_physicsNode.debugDraw = TRUE;
 }
 
 -(void)onEnter{
@@ -90,7 +92,8 @@ static const int POOL_NUM = 10;
                 }
                 
             }
-            aux.position = best.position;
+            [aux.physicsBody applyImpulse:ccpSub(best.position, aux.position)];
+            //aux.position = best.position;
         }
     }
 //    if (nutriaTime > 5){

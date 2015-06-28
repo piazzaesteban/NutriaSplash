@@ -17,6 +17,7 @@
 
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = TRUE;
+    
 }
 
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
