@@ -32,8 +32,6 @@
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     lastTouch = [touch locationInNode:self.parent];
-    
-    
 }
 
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
@@ -45,7 +43,6 @@
         vel = ccpMult(vel, 0.5);
     }
     [self.physicsBody applyImpulse:vel];
-    
 }
 
 -(void)setNutria:(Nutria*)nutria{

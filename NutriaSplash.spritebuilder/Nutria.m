@@ -9,18 +9,32 @@
 #import "Nutria.h"
 
 
-@implementation Nutria
+@implementation Nutria{
+    CCSprite * sprite;
+}
 
 
 -(id)init{
     if([super init]){
+        self.physicsBody.sensor = true;
     }
     return self;
 }
 
 -(void)didLoadFromCCB{
-    self.jumping = NO;
+    self.hasJumped = NO;
     
+    
+}
+
+-(void)pop{
+    [sprite setSpriteFrame:[CCSpriteFrame frameWithImageNamed: @"GameAssets/nutria-mitad.png"]];
+    sprite.scale = 0.5;
+}
+
+-(void)jump{
+    [sprite setSpriteFrame:[CCSpriteFrame frameWithImageNamed: @"GameAssets/nutria-saltando.png"]];
+    sprite.scale = 1;
 }
 
 @end

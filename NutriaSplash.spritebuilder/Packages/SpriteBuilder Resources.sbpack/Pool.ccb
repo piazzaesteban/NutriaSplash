@@ -96,9 +96,9 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
-							<false/>
+							<real>0.67000001668930054</real>
+							<real>0.67000001668930054</real>
+							<true/>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/piscina.png</string>
+							<string>GameAssets/alberca.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -169,7 +169,7 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string></string>
+			<string>pool</string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>

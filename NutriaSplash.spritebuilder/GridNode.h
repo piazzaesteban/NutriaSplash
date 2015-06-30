@@ -9,12 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GridNode : CCNode {
-    
-    
-}
+@interface GridNode : CCNode
 
 -(void)visibleTarget;
+-(void)notVisibleTarget;
 
 @property (nonatomic,assign) BOOL hasPool;
 @property (nonatomic,assign) BOOL hasNutria;

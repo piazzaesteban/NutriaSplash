@@ -28,7 +28,9 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
-@implementation AppController
+@implementation AppController{
+    CCNode *run;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -59,6 +61,10 @@
 
 - (CCScene*) startScene
 {
+    run = [[CCNode alloc]init];
+    CCActionDelay *delay = [CCActionDelay actionWithDuration:2.f];
+    [run runAction:delay];
+    [[OALSimpleAudio sharedInstance] preloadBg:@"GameAudio/introTrack.wav"];
     return [CCBReader loadAsScene:@"MainScene"];
 }
 

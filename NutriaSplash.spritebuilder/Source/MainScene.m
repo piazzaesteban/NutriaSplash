@@ -5,8 +5,12 @@
     
 }
 
+-(void)didLoadFromCCB{
+    [[OALSimpleAudio sharedInstance] playBgWithLoop:TRUE];
+}
+
 -(void)play {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"LevelSelection"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     _playButton.enabled = false;
 }

@@ -15,7 +15,7 @@
 
 -(id)init{
     if (self = [super init]) {
-         target= [CCSprite spriteWithImageNamed:@"Blobs/target.png"];
+        target= [CCSprite spriteWithImageNamed:@"Blobs/target.png"];
         [self addChild:target];
         target.zOrder = 10;
         target.visible = false;
@@ -25,6 +25,9 @@
 
 -(void)visibleTarget{
     target.visible = true;
+}
+-(void)notVisibleTarget{
+    target.visible = false;
 }
 
 @end

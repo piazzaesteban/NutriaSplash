@@ -15,8 +15,11 @@
 @interface Nutria : CCNode {
 }
 
+-(void)pop;
+-(void)jump;
+
 @property (nonatomic,weak) GridNode* nextNode;
 @property (nonatomic,weak) Pool* nutriaPool;
-@property (nonatomic,assign) BOOL jumping;
+@property (nonatomic,assign) BOOL hasJumped;
 
 @end
