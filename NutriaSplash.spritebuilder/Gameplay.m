@@ -82,12 +82,6 @@
     [_physicsNode.space setDamping:newDamp];
 }
 
-#pragma mark - PHYSICS ON THE GAME / COLLISIONS
-
-//-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair border:(CCNode*)border pool:(CCNode*)pool {
-//    return TRUE;
-//}
-
 #pragma mark - GAME METHODS
 
 // Setting correct text format in _timeCountLabel
