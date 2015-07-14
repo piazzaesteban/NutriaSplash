@@ -18,9 +18,4 @@
     return self;
 }
 
--(void)didLoadFromCCB{
-    self.jumping = NO;
-    
-}
-
 @end

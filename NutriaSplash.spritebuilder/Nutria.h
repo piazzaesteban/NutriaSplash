@@ -6,17 +6,9 @@
 //  Copyright 2015 Apportable. All rights reserved.
 //
 
-@class GridNode;
-@class Pool;
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-
-@interface Nutria : CCNode {
-}
-
-@property (nonatomic,weak) GridNode* nextNode;
-@property (nonatomic,weak) Pool* nutriaPool;
-@property (nonatomic,assign) BOOL jumping;
+@interface Nutria : CCNode
 
 @end

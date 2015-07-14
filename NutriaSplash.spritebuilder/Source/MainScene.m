@@ -1,8 +1,15 @@
+
 #import "MainScene.h"
 
 @implementation MainScene{
     CCButton* _playButton;
     
+}
+
+-(id)init{
+    if (self = [super init]) {
+    }
+    return self;
 }
 
 -(void)play {

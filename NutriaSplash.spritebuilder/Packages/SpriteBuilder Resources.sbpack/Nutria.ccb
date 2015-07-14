@@ -85,8 +85,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.0</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/Nutria.png</string>
+							<string>GameAssets/nutria-mitad.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -189,8 +189,8 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>50</real>
-					<real>30</real>
+					<real>40</real>
+					<real>37.5</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
