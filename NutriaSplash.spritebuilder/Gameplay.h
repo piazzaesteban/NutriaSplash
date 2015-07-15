@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
-@interface Gameplay : CCNode <CCPhysicsCollisionDelegate> {
-    
-}
+#import "Pool.h"
+
+@interface Gameplay : CCNode <CCPhysicsCollisionDelegate>
+
+@property (nonatomic, assign) int level;
 
 @end
