@@ -7,9 +7,8 @@
 //
 
 #import "Gameplay.h"
-#import "Pool.h"
-#import "GridNode.h"
 
+<<<<<<< HEAD
 static const int GRID_ROWS = 5;
 static const int GRID_COLUMNS = 5;
 static const int POOL_NUM = 5;
@@ -29,22 +28,51 @@ static const int POOL_NUM = 5;
     CGSize s;
     int time, numLifes;
     
+=======
+#pragma mark - COMPONENTS AND VARIABLES
+
+@implementation Gameplay{
+    CCPhysicsNode *_physicsNode;
+    CCLabelTTF *_fishCountLabel, *_nutriaCountLabel, *_timeCountLabel;
+    CGSize phSize;
+    NSDictionary *_readingLevel;
+    NSDictionary *_thisLevel;
+    int _totalNutrias;
+    int _totalPools;
+    int _totalTime;
+    NSMutableArray *nutrias;
+    NSMutableArray *pools;
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
 }
+
+#pragma mark - INITIALIZING
 
 -(id)init{
     if (self = [super init]) {
+<<<<<<< HEAD
         pools = [[NSMutableArray alloc]init];
         lockNodes = [[NSMutableArray alloc] init];
         nutrias = [[NSMutableArray alloc] init];
         nutriaTime = 3;
         jumping = false;
         time = 30;
+=======
+        _level = 1; // Will be read from singleton
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
     }
     return self;
 }
 
 -(void)didLoadFromCCB{
+    //_physicsNode.debugDraw = TRUE;
+    _physicsNode.collisionDelegate = self;
+    phSize = _physicsNode.boundingBox.size;
+    
+    // Reading level options
+    [self readingLevel];
+    
     srand48(arc4random());
+<<<<<<< HEAD
     s = [CCDirector sharedDirector].viewSize;
     _cellHeight = _bg.boundingBox.size.width / GRID_ROWS;
     _cellWidth = _bg.boundingBox.size.height / GRID_COLUMNS;
@@ -69,26 +97,19 @@ static const int POOL_NUM = 5;
             int rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
             number = [NSNumber numberWithInt:rndValue];
         }while ([marcados containsObject:number]);
+=======
+    for (int i = 0; i<_totalPools; i++){
+        float rndX = arc4random_uniform(phSize.width);
+        float rndY = arc4random_uniform(phSize.height);
+        
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
         Pool* pool = (Pool*)[CCBReader load:@"Pool"];
-        CCNode *temp = [lockNodes objectAtIndex:[number integerValue]];
-        pool.position = ccp(temp.position.x,temp.position.y);
-        pool.zOrder = 10;
-        [marcados addObject:number];
-        [_physicsNode addChild:pool];
+        pool.position = ccp(rndX, rndY);
         [pools addObject:pool];
-        Nutria* nutria;
-        if (i%2){
-            nutria= (Nutria*)[CCBReader load:@"Nutria"];
-            [_physicsNode addChild:nutria];
-            [pool setNutria:nutria];
-            pool.lola.visible = false;
-            nutria.position = temp.position;
-            nutria.zOrder = 11;
-            [nutria setNutriaPool:pool];
-            [nutrias addObject:nutria];
-        }
+        [_physicsNode addChild: pool];
     }
     
+<<<<<<< HEAD
     [self schedule:@selector(muestraNutrias) interval:2.f];
     //_physicsNode.debugDraw = TRUE;
     [_nutriaCountLabel setString:@"x02"];
@@ -279,8 +300,69 @@ static const int POOL_NUM = 5;
 //            }
 //        }
 //    }
-    
-
+=======
+    // Setting time
+    [self schedule:@selector(levelTimer) interval:1.0f];
 }
 
+-(void)readingLevel {
+    // Reading Level options from Levels' plist
+    NSString *strLevel = [NSString stringWithFormat:@"Level%i",_level];
+    NSString *superList = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+    _readingLevel = [NSDictionary dictionaryWithContentsOfFile:superList];
+    _thisLevel = [NSDictionary dictionaryWithDictionary:[_readingLevel objectForKey:strLevel]];
+    
+    // Getting number of Nutrias
+    _totalNutrias = [[_thisLevel objectForKey:@"totalNutrias"] intValue];
+    NSString *countN;
+    if (_totalNutrias < 10)
+        countN = [NSString stringWithFormat:@"x0%i",_totalNutrias];
+    else countN = [NSString stringWithFormat:@"x%i",_totalNutrias];
+    [_nutriaCountLabel setString:countN];
+
+    // Getting number of pools
+    _totalPools = _totalNutrias * 2;
+    
+    // Getting level time
+    _totalTime = [[_thisLevel objectForKey:@"time"] intValue];
+    [self setTimeLabel];
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
+    
+    // Getting _physicsNode damping
+    float newDamp = [[_thisLevel objectForKey:@"damping"] floatValue];
+    [_physicsNode.space setDamping:newDamp];
+}
+
+<<<<<<< HEAD
+=======
+#pragma mark - GAME METHODS
+
+// Setting correct text format in _timeCountLabel
+-(void)setTimeLabel {
+    NSString *thisTime;
+    if (_totalTime < 60) {
+        if (_totalTime < 10)
+            thisTime = [NSString stringWithFormat:@"0:0%i",_totalTime];
+        else
+            thisTime = [NSString stringWithFormat:@"0:%i",_totalTime];
+    } else {
+        int minutes = _totalTime / 60;
+        int seconds = _totalTime % 60;
+        if (seconds < 10)
+            thisTime = [NSString stringWithFormat:@"%i:0%i",minutes,seconds];
+        else
+            thisTime = [NSString stringWithFormat:@"%i:%i",minutes,seconds];
+    }
+    [_timeCountLabel setString:thisTime];
+}
+// Counter --
+-(void)levelTimer {
+    if (_totalTime > 0)
+        _totalTime--;
+    else
+        _totalTime = 0;
+    [self setTimeLabel];
+}
+
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
 @end

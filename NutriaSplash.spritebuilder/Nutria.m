@@ -21,6 +21,7 @@
     return self;
 }
 
+<<<<<<< HEAD
 -(void)didLoadFromCCB{
     self.hasJumped = NO;
     
@@ -37,4 +38,6 @@
     sprite.scale = 1;
 }
 
+=======
+>>>>>>> 5059237ae7352de4bf11667a85b72cbaadc2e148
 @end
